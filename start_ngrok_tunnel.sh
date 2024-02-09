@@ -20,7 +20,8 @@ case $(uname) in
         # allow an incoming connection in that state.
         chmod 755 "$HOME"
         mkdir "$HOME"/.ssh
-        sudo echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
+        chmod 700 /etc/ssh/sshd_config
+        echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
         PKG="https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
         UNPACK="tar xzvf"
         ;;
