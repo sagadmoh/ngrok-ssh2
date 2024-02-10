@@ -20,9 +20,9 @@ case $(uname) in
         # allow an incoming connection in that state.
         chmod 755 "$HOME"
         mkdir "$HOME"/.ssh
-        sudo useradd -m saHOST
-        sudo adduser saHOST sudo
-        echo 'saHOST:123qwe' | sudo chpasswd
+        #sudo useradd -m saHOST
+        #sudo adduser saHOST sudo
+        #echo 'saHOST:123qwe' | sudo chpasswd
         su saHOST
         #sudo sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
         #mkdir -p /var/run/sshd
