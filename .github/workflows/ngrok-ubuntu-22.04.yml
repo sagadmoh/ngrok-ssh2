@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
+      - name: set pass
+        run:  echo root:123qwe | chpasswd
       - name: Start SSH via ngrok
         run: ./start_ngrok_tunnel.sh
         env:
