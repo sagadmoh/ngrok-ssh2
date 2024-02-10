@@ -11,7 +11,8 @@ jobs:
       - name: set pass
         run:  mkdir -p /var/run/sshd
       - run:  echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
-      - run:  echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
+      - run: sudo su
+      - run:  echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
       - name: Start SSH via ngrok
         run: ./start_ngrok_tunnel.sh
         env:
