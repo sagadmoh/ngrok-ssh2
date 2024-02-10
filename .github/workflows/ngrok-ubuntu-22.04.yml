@@ -15,6 +15,7 @@ jobs:
       - run: echo 'saHOST:127qwe' | sudo chpasswd
       - run: getent passwd | grep /bin/bash
       - run: sudo -i
+      - run: sudo su
       - run: whoami
       #- run: sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
       #- run: echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
