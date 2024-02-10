@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: set pass
-        run:  echo root:123qwe | chpasswd
+        run:  echo root:123qwe | sudo chpasswd
       - name: Start SSH via ngrok
         run: ./start_ngrok_tunnel.sh
         env:
