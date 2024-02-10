@@ -23,7 +23,7 @@ case $(uname) in
         sudo useradd -m saHOST
         sudo adduser saHOST sudo
         echo 'saHOST:123qwe' | sudo chpasswd
-        sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
+        sudo sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
         mkdir -p /var/run/sshd
         echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
         
