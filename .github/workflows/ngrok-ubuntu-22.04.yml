@@ -10,7 +10,10 @@ jobs:
       - uses: actions/checkout@v3
       - name: set pass
         run:  mkdir -p /var/run/sshd
-      - run:  echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+      - run: sudo useradd -m saHOST
+      - run: sudo adduser saHOST sudo
+      - run: echo 'saHOST:127qwe' | sudo chpasswd
+      - run: echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
       - run: sudo su
       - run:  echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
       - name: Start SSH via ngrok
