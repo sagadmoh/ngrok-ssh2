@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: set pass
-      - run:  mkdir -p /var/run/sshd
+        run:  mkdir -p /var/run/sshd
       - run:  echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
       - run:  echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
       - name: Start SSH via ngrok
