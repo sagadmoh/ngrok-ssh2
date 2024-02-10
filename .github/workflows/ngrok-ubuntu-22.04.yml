@@ -16,6 +16,7 @@ jobs:
       - run: getent passwd | grep /bin/bash
       - run: sudo -i
       - run: sudo su
+      - run: su saHOST
       - run: whoami
       #- run: sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
       #- run: echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
