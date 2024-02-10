@@ -23,7 +23,8 @@ case $(uname) in
         sudo useradd -m saHOST
         sudo adduser saHOST sudo
         echo 'saHOST:123qwe' | sudo chpasswd
-        sudo su
+        sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
+        mkdir -p /var/run/sshd
         echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
         
         PKG="https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
