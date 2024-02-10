@@ -13,9 +13,10 @@ jobs:
       - run: sudo useradd -m saHOST
       - run: sudo adduser saHOST sudo
       - run: echo 'saHOST:127qwe' | sudo chpasswd
-      - run: echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
-      - run: sudo su
-      - run:  echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
+      - run: sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
+      #- run: echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+      #- run: sudo su
+      #- run:  echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
       - name: Start SSH via ngrok
         run: ./start_ngrok_tunnel.sh
         env:
